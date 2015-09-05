@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: comments_dev
+
+test:
+  <<: *default
+  database: comments_test
+
+production:
+  <<: *default
+  database: comments_production
