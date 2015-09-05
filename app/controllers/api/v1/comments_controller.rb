@@ -1,12 +1,12 @@
 class Api::V1::CommentsController < ApplicationController
   def index
     @comments = Comment.all.order(:id).reverse
-    respond_with @comments
+    render json: @comments
   end
 
   def show
     @comment = Comment.find(params[:id])
-    respond_with @comment
+    render json: @comment
   end
 
   def create
